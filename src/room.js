@@ -38,5 +38,4 @@ class Remote extends Component  {
   
   
   // remoteConnection.setRemoteDescription(offer).then(a=>console.log("done"))
-  // await remoteConnection.createAnswer().then(a => remoteConnection.setLocalDescription(a)).then(a=>
-  //   console.log(JSON.stringify(remoteConnection.localDescription).split("\\").join('\\\\')))
+  // await remoteConnection.createAnswer().then(a => remoteConnection.setLocalDescription(a));

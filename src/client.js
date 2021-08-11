@@ -3,37 +3,12 @@ import Remote from './room';
 import 'react-chatbox-component/dist/style.css';
 import {ChatBox} from 'react-chatbox-component';
 import React, { Component } from 'react';
-var sendChannel;
-class Server extends Component  {
+class Client extends Component  {
     constructor(p)
     {
       super(p);
       this.send= this.send.bind(this);
       this.cal= this.cal.bind(this);
-      sendChannel = this.props.lc.createDataChannel("sendChannel");
-      this.props.lc.onicecandidate = e =>  {
-        this.props.app.setState({c: JSON.stringify(this.props.lc.localDescription)});
-        }
-     
-        sendChannel.onmessage =e =>  {
-          this.props.app.setState({ 
-           messages: this.props.app.state.messages.concat([{
-            "text":e.data,
-            "id":"1",
-            "sender": {
-              "name": "He",
-              "uid": "user2",
-              "avatar": "https://i.guim.co.uk/img/media/d31ebd49b32a5aa609a584ababb1e03bc70b4942/573_213_2929_1758/master/2929.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=a54fc963e39dd6645fce012663ed13c1",
-            }
-          }])
-          });
-          
-          console.log(this.props.app.state.messages);  };
-        sendChannel.onopen = e => console.log("open!!!!");
-          sendChannel.onclose =e => console.log("closed!!!!!!");
-     
-     
-          this.props.lc.createOffer().then(o => this.props.lc.setLocalDescription(o) );
     }
     send(e)
   {
@@ -48,7 +23,7 @@ class Server extends Component  {
        }
      }])
      });
-     sendChannel.send(e);
+     this.props.sendChannel.send(e);
   }
   cal()
   {
@@ -59,7 +34,7 @@ class Server extends Component  {
   {
     return (
       <div className="App">
-          This is server
+          This is client
            {this.props.app.state.rd?<Remote con={this.props.app} server={this}></Remote>:""}
            {this.props.app.state.rd?
         ""
@@ -76,4 +51,4 @@ class Server extends Component  {
     );
   }
 }
-  export default Server;
+  export default Client;
