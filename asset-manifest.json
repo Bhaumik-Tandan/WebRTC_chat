@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/WebRTC_chat/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/WebRTC_chat/static/js/main.2feff992.chunk.js",
-    "main.js.map": "/WebRTC_chat/static/js/main.2feff992.chunk.js.map",
+    "main.js": "/WebRTC_chat/static/js/main.75a120a0.chunk.js",
+    "main.js.map": "/WebRTC_chat/static/js/main.75a120a0.chunk.js.map",
     "runtime-main.js": "/WebRTC_chat/static/js/runtime-main.6bfdcb7c.js",
     "runtime-main.js.map": "/WebRTC_chat/static/js/runtime-main.6bfdcb7c.js.map",
     "static/css/2.223d0be0.chunk.css": "/WebRTC_chat/static/css/2.223d0be0.chunk.css",
-    "static/js/2.a3cce4fc.chunk.js": "/WebRTC_chat/static/js/2.a3cce4fc.chunk.js",
-    "static/js/2.a3cce4fc.chunk.js.map": "/WebRTC_chat/static/js/2.a3cce4fc.chunk.js.map",
+    "static/js/2.2db7b82e.chunk.js": "/WebRTC_chat/static/js/2.2db7b82e.chunk.js",
+    "static/js/2.2db7b82e.chunk.js.map": "/WebRTC_chat/static/js/2.2db7b82e.chunk.js.map",
     "static/js/3.b7f91541.chunk.js": "/WebRTC_chat/static/js/3.b7f91541.chunk.js",
     "static/js/3.b7f91541.chunk.js.map": "/WebRTC_chat/static/js/3.b7f91541.chunk.js.map",
     "index.html": "/WebRTC_chat/index.html",
     "static/css/2.223d0be0.chunk.css.map": "/WebRTC_chat/static/css/2.223d0be0.chunk.css.map",
     "static/css/main.8c8b27cf.chunk.css.map": "/WebRTC_chat/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.a3cce4fc.chunk.js.LICENSE.txt": "/WebRTC_chat/static/js/2.a3cce4fc.chunk.js.LICENSE.txt",
+    "static/js/2.2db7b82e.chunk.js.LICENSE.txt": "/WebRTC_chat/static/js/2.2db7b82e.chunk.js.LICENSE.txt",
     "static/media/empty-state.2f0835b4.svg": "/WebRTC_chat/static/media/empty-state.2f0835b4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6bfdcb7c.js",
     "static/css/2.223d0be0.chunk.css",
-    "static/js/2.a3cce4fc.chunk.js",
+    "static/js/2.2db7b82e.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.2feff992.chunk.js"
+    "static/js/main.75a120a0.chunk.js"
   ]
 }
