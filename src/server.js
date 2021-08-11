@@ -19,7 +19,7 @@ class Server extends Component  {
           this.props.app.setState({ 
            messages: this.props.app.state.messages.concat([{
             "text":e.data,
-            "id":"1",
+            "id":this.props.app.state.messages.length,
             "sender": {
               "name": "He",
               "uid": "user2",
@@ -40,7 +40,7 @@ class Server extends Component  {
     this.props.app.setState({ 
       messages: this.props.app.state.messages.concat([{
        "text":e,
-       "id":"1",
+       "id":this.props.app.state.messages.length,
        "sender": {
          "name": "ME",
          "uid": "user1",
@@ -59,7 +59,6 @@ class Server extends Component  {
   {
     return (
       <div className="App">
-          This is server
            {this.props.app.state.rd?<Remote con={this.props.app} server={this}></Remote>:""}
            {this.props.app.state.rd?
         ""

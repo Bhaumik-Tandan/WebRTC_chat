@@ -8,12 +8,10 @@ class Remote extends Component  {
   {
     return (
       <div className="App">
-        <h1>This is server</h1>
-          <label for="pid">Your Prop</label>
-          <textarea name="pid" value={this.props.con.state.c}/><br></br>
-        <label for="rid">Room Id</label>
-        <textarea name="rid" id="lk"/>
-        <button type="submit" onClick={this.props.server.cal}>Connect</button>
+          <h1>This is client</h1>
+          <label for="pi">Enter the id of the server</label>
+          <textarea name="pi" id="sa"/><br></br>
+        <button type="submit" onClick={this.props.client.cal}>Connect</button>
       </div>
     );
   }
