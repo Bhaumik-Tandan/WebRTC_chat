@@ -1,5 +1,6 @@
 import './App.css';
 import Remote from './room';
+import Server from './server';
 import React, { Component } from 'react';
 import 'react-chatbox-component/dist/style.css';
 import {ChatBox} from 'react-chatbox-component';
@@ -19,10 +20,11 @@ class App extends Component
       rd:true,
       c:"",
       r:"",
-      messages:[]
+      messages:[],
+      server:true,
+      client:false
     }
     this.chat= this.chat.bind(this);
-    this.send= this.send.bind(this);
     localConnection.onicecandidate = e =>  {
       this.setState({c: JSON.stringify(localConnection.localDescription)});
       }
@@ -51,38 +53,13 @@ class App extends Component
   {
     this.setState({rd: false});
   }
-  send(e)
-  {
-    this.setState({ 
-      messages: this.state.messages.concat([{
-       "text":e,
-       "id":"1",
-       "sender": {
-         "name": "ME",
-         "uid": "user1",
-         "avatar": "https://cdn.dribbble.com/users/1041205/screenshots/3636353/dribbble.jpg",
-       }
-     }])
-     });
-     sendChannel.send(e);
-  }
   render()
   {
     return(
       <div className="App">
-        {this.state.rd?<Remote con={this} lc={localConnection}></Remote>:""}
+       {this.state.rd?<button>Server</button>:""}{this.state.rd?<button>Client</button>:""}
+        {this.state.server?<Server app={this} lc={localConnection} sendChannel={sendChannel}></Server>:""}
 
-        {this.state.rd?
-        ""
-        :
-        <div className='container'>  
-        <div className='chat-header'>   
-        <h5>Chat</h5> 
-        </div>  
-        <div id="ko">
-        <ChatBox key={this.state.messages.length} onSubmit={this.send} messages={this.state.messages} />
-        </div>
-        </div>}
 
         {/* {msg.map(item => (
         <li key={item}>{item}</li>

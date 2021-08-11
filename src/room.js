@@ -3,11 +3,6 @@ class Remote extends Component  {
     constructor(p)
     {
       super(p);
-      this.cal= this.cal.bind(this);
-    }
-    cal() {
-        this.props.con.setState({r:document.getElementById("lk").value});
-          this.props.lc.setRemoteDescription (JSON.parse(document.getElementById("lk").value)).then(a=>this.props.con.chat());        
     }
     render()
   {
@@ -17,7 +12,7 @@ class Remote extends Component  {
           <textarea name="pid" value={this.props.con.state.c}/><br></br>
         <label for="rid">Room Id</label>
         <textarea name="rid" id="lk"/>
-        <button type="submit" onClick={this.cal}>Connect</button>
+        <button type="submit" onClick={this.props.server.cal}>Connect</button>
       </div>
     );
   }
