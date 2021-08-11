@@ -8,7 +8,7 @@ import {ChatBox} from 'react-chatbox-component';
 // const dc=lc.createDataChannel("channel")
 // lc.onicecandidate=e=>console.log("hjgjg "+JSON.stringify(lc.localDescription))
 // lc.createOffer().then(o=>lc.setLocalDescription(o)).then(a=>console.log("set"))
-const localConnection = new RTCPeerConnection();
+const localConnection = new RTCPeerConnection({ 'iceServers': [{ 'urls': 'stun:74.125.142.127:19302' }] });
 const sendChannel = localConnection.createDataChannel("sendChannel");
 class App extends Component 
 {
@@ -53,14 +53,14 @@ class App extends Component
   {
     this.setState({rd: false});
   }
+
   render()
   {
     return(
       <div className="App">
-       {this.state.rd?<button>Server</button>:""}{this.state.rd?<button>Client</button>:""}
+       {this.state.rd?<button onClick={this.setCerver}>Server</button>:""}{this.state.rd?<button  onClick={this.setClient}>Client</button>:""}
         {this.state.server?<Server app={this} lc={localConnection} sendChannel={sendChannel}></Server>:""}
-
-
+        {/* {this.state.client?<Client app={this} lc={localConnection} sendChannel={sendChannel}></Client>:""} */}
         {/* {msg.map(item => (
         <li key={item}>{item}</li>
       ))} */}

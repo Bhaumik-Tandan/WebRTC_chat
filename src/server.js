@@ -34,6 +34,7 @@ class Server extends Component  {
   {
     return (
       <div className="App">
+          This is server
            {this.props.app.state.rd?<Remote con={this.props.app} server={this}></Remote>:""}
            {this.props.app.state.rd?
         ""

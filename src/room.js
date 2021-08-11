@@ -18,7 +18,7 @@ class Remote extends Component  {
   }
 }
   export default Remote;
-  // const remoteConnection = new RTCPeerConnection()
+  // const remoteConnection = new RTCPeerConnection({ 'iceServers': [{ 'urls': 'stun:74.125.142.127:19302' }] })
 
   // remoteConnection.onicecandidate = e =>  {
   // console.log(" NEW ice candidnat!! on localconnection reprinting SDP " )
