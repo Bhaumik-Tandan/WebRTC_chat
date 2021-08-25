@@ -1,7 +1,7 @@
-import './App.css';
 import Remote from './room';
 import 'react-chatbox-component/dist/style.css';
 import {ChatBox} from 'react-chatbox-component';
+import Video from "./video";
 import React, { Component } from 'react';
 var sendChannel;
 class Server extends Component  {
@@ -10,6 +10,7 @@ class Server extends Component  {
       super(p);
       this.send= this.send.bind(this);
       this.cal= this.cal.bind(this);
+      this.vc= this.vc.bind(this);
       sendChannel = this.props.lc.createDataChannel("sendChannel");
       this.props.lc.onicecandidate = e =>  {
         this.props.app.setState({c: JSON.stringify(this.props.lc.localDescription)});
@@ -34,6 +35,11 @@ class Server extends Component  {
      
      
           this.props.lc.createOffer().then(o => this.props.lc.setLocalDescription(o) );
+          this.state={vc:false};
+    }
+    vc()
+    {
+      this.setState({vc:true});
     }
     send(e)
   {
@@ -59,18 +65,22 @@ class Server extends Component  {
   {
     return (
       <div className="App">
+        {this.state.vc?<Video s={this} port={this.props.lc}></Video>:
+        <>
            {this.props.app.state.rd?<Remote con={this.props.app} server={this}></Remote>:""}
            {this.props.app.state.rd?
         ""
         :
         <div className='container'>  
-        <div className='chat-header'>   
-        <h5>Chat</h5> 
+        <div className='chat-header'> 
+        <button onClick={this.vc}>Video Call</button>
+        <h1>Chat</h1> 
         </div>  
         <div id="ko">
         <ChatBox key={this.props.app.state.messages.length} onSubmit={this.send} messages={this.props.app.state.messages} />
         </div>
         </div>}
+        </>}
       </div>
     );
   }
